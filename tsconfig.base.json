@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "useUnknownInCatchVariables": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@domain/*": ["src/packages/domain/*"],
+      "@application/*": ["src/packages/application/*"],
+      "@infrastructure/*": ["src/packages/infrastructure/*"],
+      "@bootstrap/*": ["src/packages/bootstrap/*"],
+      "@config/*": ["src/config/*"],
+      "@ui/*": ["src/ui/*"]
+    }
+  }
+}
