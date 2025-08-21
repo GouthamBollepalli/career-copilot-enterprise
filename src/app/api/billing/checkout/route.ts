@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   if (!key || !priceId) return NextResponse.json({ error: "Stripe not configured" }, { status: 500 });
   const user = await getUserFromAuthHeader(req);
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  const stripe = new Stripe(key, { apiVersion: "2024-04-10" });
+  const stripe = new Stripe(key, { apiVersion: "2024-06-20" as const});
   const session = await stripe.checkout.sessions.create({
     mode: "subscription",
     line_items: [{ price: priceId, quantity: 1 }],
